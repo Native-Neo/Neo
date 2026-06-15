@@ -95,6 +95,14 @@ systemctl daemon-reload
 #--------------------------------------
 # Inhibit the ldconfig cache generation unit, see rhbz2348669
 touch -r "/usr" "/etc/.updated" "/var/.updated"
+# Ensure pam_systemd is enabled in the login stack
+# Check /etc/pam.d/system-login or /etc/pam.d/login
+if ! grep -q "pam_systemd.so" /etc/pam.d/system-login; then
+    echo "session optional pam_systemd.so" >> /etc/pam.d/system-login
+fi
+
+# Enable systemd-logind service
+systemctl enable systemd-logind
 
 mkdir -p /etc/kernel
 echo "BOOTLOADER=systemd-boot" >> /etc/sysconfig/kernel
