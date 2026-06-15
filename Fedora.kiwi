@@ -5,6 +5,7 @@
 <contact>yashyt6246@gmail.com</contact>
 <specification>Neo Linux</specification>
 </description>
+
 <preferences>
 	<version>44</version>
 <packagemanager>dnf5</packagemanager>
@@ -36,12 +37,12 @@
 <profile name="Game-Nova" description="The sole Neo gamer experience with only gaming packages!"> <requires profile="Core"/> </profile>
 </profiles>
 <!-- Repositories -->
-<repository type="rpm-md" alias="Neo" sourcetype="metalink">
+<repository type="rpm-md" alias="Neo" imageinclude="true"  sourcetype="metalink">
 	<source path="https://mirrors.fedoraproject.org/metalink?repo=fedora-$releasever&amp;arch=$basearch">
 	<signing key="file:///usr/share/distribution-gpg-keys/fedora/RPM-GPG-KEY-fedora-$releasever-primary"/>
 	</source>
 	</repository>
-	<repository type="rpm-md" alias="Updates" sourcetype="metalink">
+	<repository type="rpm-md" alias="Updates" imageinclude="true"  sourcetype="metalink">
 	<source path="https://mirrors.fedoraproject.org/metalink?repo=updates-released-f$releasever&amp;arch=$basearch">
 	<signing key="file:///usr/share/distribution-gpg-keys/fedora/RPM-GPG-KEY-fedora-$releasever-primary"/>
 	</source>
@@ -49,15 +50,15 @@
 	<repository type="rpm-md" alias="Terra" priority="90" sourcetype="metalink">
 	<source path="https://tetsudou.fyralabs.com/metalink?repo=terra$releasever&amp;arch=$basearch"/>
 </repository>
-<repository type="rpm-md" alias="Brave" priority="90">
+<repository type="rpm-md" alias="Brave" imageinclude="true"  priority="90">
 	<source path="https://brave-browser-rpm-release.s3.brave.com/x86_64/">
 	<signing key="https://brave-browser-rpm-release.s3.brave.com/brave-core.asc"/>
 	</source>
 	</repository>
-	<repository type="rpm-md" alias="Vscode" priority="50">
+	<repository type="rpm-md" alias="Vscode" imageinclude="true"  priority="50">
 	<source path="https://packages.microsoft.com/yumrepos/vscode/"/>
 </repository>
-<repository type="rpm-md" alias="RPMfusion-free" priority="90">
+<repository type="rpm-md" alias="RPMfusion-free" imageinclude="true"  priority="90">
 	<source path="https://download1.rpmfusion.org/free/fedora/releases/$releasever/Everything/$basearch/os/"/>
 </repository>
 
@@ -81,11 +82,14 @@
 	<namedCollection name="critical-path-kde"/>
 <!--	<namedCollection name="anaconda-tools"/>-->
 	<package name="generic-logos"/>
-<!--	<package name="anaconda-live"/>
-	<package name="anaconda-install-env-deps"/>-->
+<package name="anaconda-live"/>
+<!--	<package name="anaconda-install-env-deps"/>-->
+	<package name="qdbus"/>
 	<package name="ark"/>
+	<package name="xrdb"/>
 	<package name="bash"/>
 	<package name="bluez"/>
+	<package name="selinux-policy-targeted"/>
 	<package name="brave-browser"/>
 	<package name="btop"/>
 	<package name="btrfs-progs"/>
