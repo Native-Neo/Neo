@@ -1,0 +1,12 @@
+[Unit]
+Description=Remove Anaconda Desktop Icon
+After=live-sysroot.mount
+Before=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c 'rm -f /home/liveuser/Desktop/liveinst.desktop'
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

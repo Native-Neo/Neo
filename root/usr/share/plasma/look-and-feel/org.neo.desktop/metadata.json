@@ -1,0 +1,18 @@
+{
+    "KPackageStructure": "Plasma/LookAndFeel",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "",
+                "Name": "Native"
+            }
+        ],
+        "Category": "",
+        "Description": "Neo - theme variant of Nobara",
+        "Id": "org.neo.desktop",
+        "License": "GPLv2+",
+        "Name": "Neo",
+        "Version": "0.01",
+        "Website": ""
+    }
+}

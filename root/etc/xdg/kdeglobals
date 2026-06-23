@@ -1,8 +1,8 @@
 [KDE]
-LookAndFeelPackage=org.neo.theme
+LookAndFeelPackage=org.neo.desktop
 
 [General]
 ColorScheme=BreezeDark
 
 [Icons]
-Theme=breeze-dark
+Theme=neo
